@@ -60,9 +60,12 @@ public class CinemagiaAge {
 
     @Test(dependsOnMethods = "selectMovie")
     public void checkDurata(){
-        String durataMovie = "106 minute";
+        int durataMovie = 106;
         WebElement durata = driver.findElement(By.cssSelector(".list1 li:nth-child(4)>span"));
-        Assert.assertEquals(durata.getText(),durataMovie);
+        String durataMoviesite = durata.getText();
+        String delimitare = "[ ]+";
+        String[] inturi = durataMoviesite.split(delimitare);
+        Assert.assertEquals(inturi[0],durataMovie);
     }
 
 }
