@@ -25,12 +25,12 @@ public class CinemagiaAge {
         driver.quit();
     }
 
-    @Test(groups={"C1"})
+    @Test
     public void loadPage(){
         driver.get("http://www.cinemagia.ro");
     }
 
-    @Test(groups={"C1"})
+    @Test
     public void searchMovie() throws InterruptedException {
         String movieName = "Deadpool";
         WebElement searchbox = driver.findElement(By.cssSelector("#topSearchFormQ"));
